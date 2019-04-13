@@ -26,6 +26,7 @@
     "mysql2": "^1.6.5",
     "nightmare": "^3.0.1",
     "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "puppeteer": "^1.14.0",
     "puppeteer-core": "^1.14.0",
     "sequelize": "^5.3.5",
