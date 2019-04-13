@@ -1,33 +1,45 @@
 <div id="home">
   <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="post-text">Post Text</label>
-            <input type="text" id="post-text" class="form-control" aria-describedby="post-text" placeholder="Enter Post Text">
-          </div>
-          <div class="form-group">
-            <label for="post-description">Post Description</label>
-            <textarea class="form-control" id="post-description" aria-describedby="post-description" placeholder="Enter Post Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Posts:</h3>
-        <ul id="post-list" class="list-group">
-          {{#each posts}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="post/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+    <div class="jumbotron">
+      <h1 class="text-center"><strong>Florida Man</strong></h1>
     </div>
+    <div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form">
+                    <h3>Login for For Florida Man</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 signup-form">
+                    <h3>Sign up for Florida Man!</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
   </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+
+
+
