@@ -1,19 +1,64 @@
 <div class="container">
+
+  {{!-- junbotron header --}}
+  <div class="jumbotron">
+    <h1 class="text-center"><strong>Florida Man</strong></h1>
+  </div>
+
+  {{!-- search field --}}
   <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-12">
+      <br>
       <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Post</h5>
-          <p>
-            <strong>ID</strong>: {{post.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{post.text}}</p>
-          <p>
-            <strong>Description:</strong> {{post.description}}</p>
-            <a href="/">← Back To Home</a>
+        <div class="card-header">
+          <strong>Search For Florida Man Articles!</strong>
         </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="search">Search Keyword:</label>
+            <input type="text" class="form-control" id="search-word">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-danger" id="search"> Search</button>
+              {{!-- <button class="btn btn-default" id="clear-all">
+                <i class="fa fa-trash"></i> Clear Results</button> --}}
       </div>
     </div>
   </div>
+
+    {{!-- retrieved articles  --}}
+    <div class="row">
+      <div class="col-12">
+        <br>
+        <div class="card">
+          <div class="card-header">
+            <strong>Best Florida Man</strong>
+          </div>
+          <div class="card-body" id="article-card">
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>
+
+{{!-- footer --}}
+<div class="row">
+  <div class="col-sm-12">
+    <h5 class="text-center">
+      <small>Made with lots and lots of
+        <i class="fa fa-flask"></i>
+      </small>
+    </h5>
+
+  </div>
+</div>
+{{!-- <p>
+            <strong>ID</strong>: {{post.id}}</p>
+          <p> --}}
+{{!-- <p>
+            <strong>Headline</strong>: {{post.text}}</p>
+          <p>
+            <strong>Byline:</strong> {{post.description}}</p>
+            <a href="/">← Back To Home</a>
+        </div>
