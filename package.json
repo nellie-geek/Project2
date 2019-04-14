@@ -30,6 +30,7 @@
     "puppeteer": "^1.14.0",
     "puppeteer-core": "^1.14.0",
     "sequelize": "^5.3.5",
-    "sequelize-cli": "^5.4.0"
+    "sequelize-cli": "^5.4.0",
+    "vo": "^4.0.2"
   }
 }
