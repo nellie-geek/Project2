@@ -1,16 +1,14 @@
 var axios = require('axios');
 var cheerio = require('cheerio');
 var fs = require('fs');
+var vo = require('vo');
 var Nightmare = require('nightmare');
 var nightmare = Nightmare({
     show: true
 })
-var urlHolder = ["https://floridaman.com/threatens-to-destroy-everyone-with-army-of-turtles/", 
-    "https://floridaman.com/mayor-smokes-crack-eats-meth-practices-medicine-without-license-fires-on-swat-team/",
-    "https://floridaman.com/florida-man-shows-up-to-hospital-naked-says-hes-ready-to-go/"];
-    var k = 0;
+var urlHolder = [];
 
-// wfla search scraper
+// *wfla search scraper PROBABLY NOT USING!!!*
 // nightmare.goto("https://www.baynews9.com/fl/tampa/search#%22florida%20man%22/1/score%20desc")
 //     .wait(3000)
 //     .evaluate(function () {
@@ -31,47 +29,55 @@ var urlHolder = ["https://floridaman.com/threatens-to-destroy-everyone-with-army
 //     .wait(3000)
 //     .evaluate(function () {})
 
-// **Scraper for creating JSON objects from floridaman.com articles
-urlHolder.foreach()
-        nightmare.goto(url[k])
-            .wait(3000)
+
+// *Scraper for creating JSON objects from floridaman.com articles*
+// **Because nightmare is promised based it can't be run in a for loop as is, 
+//      this is because the promise isn't complete by the time it has to make another promise.
+//      To get around this and force the for loop to wait on the promise to finish before continuing the for loop we use VO.
+//      VO forces the next Nightmare to hold off (yield) running in the next for loop runthough until we receive the previous promise.
+//      Once the entire for loop has finished the function yields ending Nightmare until the last promise has been received.** 
+var run = function* () {
+    var jsonArr = [];
+    var example = []
+    for (var i = 0; i < 5; i++) {
+        var scraping = yield nightmare.goto(urlHolder[i])
+            .wait(2000)
             .evaluate(function () {
-                var imgHold = document.querySelectorAll(".g1-frame-inner")
-                var pHold = document.querySelectorAll(".entry-content")
+                var img = document.querySelectorAll(".g1-frame-inner")
+                var p = document.querySelectorAll(".entry-content")
                 var obj = {
                     headline: document.querySelector("h1").innerHTML,
-                    image: imgHold[0].querySelector("img").getAttribute("data-src"),
-                    p1: pHold[0].querySelector("p").innerText,
-                    p2: pHold[0].querySelector("p:nth-child(2)").innerText,
+                    image: img[0].querySelector("img").getAttribute("data-src"),
+                    p1: p[0].querySelector("p").innerText,
+                    p2: p[0].querySelector("p:nth-child(2)").innerText,
                     url: pHold[0].querySelector("a").href
                 }
                 return obj;
-            }).end().then(function (response) {
-                console.log(response);
-                console.log(url.length)
-                if (k < urlHolder.length) {
-                    k++
-                    console.log(k)
-                    restart()
-                }
+            }).then(function (response) {
+                // ***This is where we push JSON into an array to prep it for POST (then eventual AJAX calls)***
+                jsonArr.push(response)
+                example.push(response.headline)
             })
-
-// **Scraper for gathering floridaman.com article urls
-// nightmare.goto("https://floridaman.com/")
-//     .wait(3000)
-//     .evaluate(function () {
-//         var urls = []
-//         // var urlArr = document.querySelectorAll('.g1-collection-item')
-//         var arr = document.querySelectorAll('.entry-title')
-//         for (var i = 0; i < arr.length; i++) {
-
-//             urls.push(arr[i].querySelector('a').href);
-//         }
-//         return urls;
-
-//     }).end().then(function (response) {
-//         urlHolder = response
-//        mainFMScraper(urlHolder)
-//     })
+    }
+    console.log(example)
+    yield nightmare.end()
+    return jsonArr;
+}
 
 
+
+// *Scraper for gathering floridaman.com article urls*
+// **Currently only runs for the main page but I will be adding VO functionality to be able to cycle through as many pages as we want.**
+nightmare.goto("https://floridaman.com/")
+    .wait(3000)
+    .evaluate(function () {
+        var urls = []
+        var arr = document.querySelectorAll('.entry-title')
+        for (var i = 0; i < arr.length; i++) {
+            urls.push(arr[i].querySelector('a').href);
+        }
+        return urls;
+    }).then(function (response) {
+        urlHolder = response
+        vo(run)()
+    })
