@@ -1,7 +1,7 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
-var db = require("../models");
+var db = require("./../models");
 
 // Telling passport to use Local - email and password 
 passport.use(new LocalStrategy(
@@ -37,4 +37,6 @@ passport.serializeUser(function(user, cb) {
 passport.deserializeUser(function(obj, cb) {
     cb(null, obj);
 });
+
+module.exports = passport;
     

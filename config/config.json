@@ -2,8 +2,8 @@
   "development": {
     "username": "root",
     "password": "root",
+    "database": "floridaman",
     "port": 8889,
-    "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

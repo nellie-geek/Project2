@@ -1,14 +1,14 @@
 // Require models and passport
-var db = require("../../models");
-var passport = require("../../config/passport");
+var db = require("./../../models");
+var passport = require("./../../config/passport.js");
 
 module.exports = function(app) {
-    //Login - if login valid send to member else send error
-    apppost("/api/login", passport.authenticate("local"), function(req, res) {
+    // Login - if login valid send to member else send error
+    app.post("/api/login", passport.authenticate("local"), function(req, res) {
         res.json("/members");
     });
 
-    //Sign up route - email and password - account created
+    // Sign up route - email and password - account created
     app.post("/api/singup", function(req, res) {
         console.log(req.body);
         db.User.create({
@@ -22,13 +22,13 @@ module.exports = function(app) {
         });
     });
 
-    //Log out use route
+    // Log out use route
     app.get("/logout", function(req, res) {
         req.logout();
         res.redirect("/");
     });
 
-    //User data route to send data to frontend 
+    // User data route to send data to frontend 
     app.get("/api/user_data", function(req, res) {
         if (!req.user) {
             res.json({});
