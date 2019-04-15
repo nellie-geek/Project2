@@ -2,7 +2,7 @@
 var express = require("express");
 var session = require("express-session");
 // Requiring passport as we've configured it
-var passport = require("./config/passport");
+var passport = require("./config/passport.js");
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
@@ -18,13 +18,16 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+// // Requiring our routes
+require("./routes/api/html-routes.js")(app);
+require("./routes/api/api-routes.js")(app);
 
-// Syncing our database and logging a message to the user upon success
+// // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+module.exports = app;
+
