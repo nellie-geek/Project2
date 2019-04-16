@@ -1,9 +1,9 @@
 var router = require("express").Router();
-var apiRoutes = require("./api");
-var viewRoutes = require("./view");
+var api = require("./api");
+var view = require("./view");
 // var authRoutes = require("./auth");
 
-router.use("/api", apiRoutes);
-router.use("/", viewRoutes);
+router.use("/api", api);
+router.use("/", view);
 
 module.exports = router;
