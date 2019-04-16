@@ -1,6 +1,6 @@
 // Require models and passport
 var db = require("./../../models");
-var passport = require("./../../config/passport.js");
+var passport = require("./../config/passport");
 
 module.exports = function(app) {
     // Login - if login valid send to member else send error
