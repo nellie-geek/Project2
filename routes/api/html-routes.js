@@ -10,7 +10,7 @@ module.exports = function(app) {
     app.get("/", function(req, res) {
       
         res.sendFile(path.join(__dirname, "../../public/signup.html"));
-        //once user signup direct to posts
+        
     });
 
     app.get("/login", function(req, res) {

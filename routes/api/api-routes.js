@@ -5,7 +5,7 @@ var passport = require("../../config/passport");
 module.exports = function(app) {
     // Login - if login valid send to member else send error
     app.post("/api/login", passport.authenticate("local"), function(req, res) {
-        res.json("/post");
+        res.json("/posts");
     });
 
     //Sign up route - email and password - account created
