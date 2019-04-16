@@ -1,9 +1,4 @@
 
-.jumbotron {
-    background-color: limegreen;
-    color: black;
-}
-
 .card-body a {
     word-break: break-all;
   }
@@ -18,7 +13,7 @@
 }
 .signup-form{
     padding: 5%;
-    background: #0062cc;
+    background: forestgreen;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .signup-form h3{
@@ -39,11 +34,11 @@
 .login-form .btnSubmit{
     font-weight: 600;
     color: #fff;
-    background-color: #0062cc;
+    background-color: forestgreen;
 }
 .signup-form .btnSubmit{
     font-weight: 600;
-    color: #0062cc;
+    color: forestgreen;
     background-color: #fff;
 }
 .signup-form .ForgetPwd{
@@ -52,7 +47,7 @@
     text-decoration: none;
 }
 .login-form .ForgetPwd{
-    color: #0062cc;
+    color: forestgreen;
     font-weight: 600;
     text-decoration: none;
 }
