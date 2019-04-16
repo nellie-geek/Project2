@@ -2,6 +2,7 @@
 var express = require("express");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
+// var routes = require("./routes");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 

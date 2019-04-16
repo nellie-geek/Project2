@@ -22,8 +22,8 @@ $(document).ready(function() {
     });
 
         function signUpUser(email, password) {
-            $.post('/api/signup', {
-                email:email,
+            $.post("/api/signup", {
+                email: email,
                 password: password
             }).then(function(data) {
                 window.location.replace(data);
@@ -31,7 +31,7 @@ $(document).ready(function() {
         }
         
         function handleLoginErr(err) {
-            $("#alert .msg").text(err.responseJSON);
+            $("#alert.msg").text(err.responseJSON);
             $("#alert").fadeIn(500);
         }
     })
