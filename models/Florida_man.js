@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
 
-    var Florida_man = sequelize.define("Florida_man", {
+    var x = sequelize.define("Florida_man", {
         headline: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         url: DataTypes.STRING,
-        meta_tags: DataTypes.STRING,
+        meta_tags: DataTypes.ARRAY(DataTypes.STRING),
         upvote: DataTypes.INTEGER,
         downvote: DataTypes.INTEGER
     });
