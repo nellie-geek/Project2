@@ -1,21 +1,21 @@
-var axios = require('axios');
-var cheerio = require('cheerio');
-var fs = require('fs');
-var vo = require('vo');
-var Nightmare = require('nightmare');
+var axios = require("axios");
+var cheerio = require("cheerio");
+var fs = require("fs");
+var vo = require("vo");
+var Nightmare = require("nightmare");
 var nightmare = Nightmare({
     show: true
 });
 
 
-module.exports = function () {
+// module.exports = function () {
     var jsonArr = [];
     // *Scraper for gathering floridaman.com article urls*
     // **This scraper can pull 327 URLs to feed into the mail scraper above to make 327 JSON objects. 
     //      just as above VO is used to manage promises**  
     var FMurlGrabber = function* () {
         var urlHolder = [];
-        for (let i = 1; i < 13; i++) {
+        for (let i = 1; i < 12; i++) {
             if (i === 1) {
                 var url = "https://floridaman.com/"
             } else {
@@ -25,14 +25,14 @@ module.exports = function () {
                 .wait(1000)
                 .evaluate(function () {
                     var scrapedUrls = []
-                    var elArr = document.querySelectorAll('.entry-title')
+                    var elArr = document.querySelectorAll(".entry-title")
                     if (i === 1) {
                         for (var i = 0; i < elArr.length; i++) {
-                            scrapedUrls.push(elArr[i].querySelector('a').href);
+                            scrapedUrls.push(elArr[i].querySelector("a").href);
                         }
                     } else {
                         for (var i = 3; i < elArr.length; i++) {
-                            scrapedUrls.push(elArr[i].querySelector('a').href);
+                            scrapedUrls.push(elArr[i].querySelector("a").href);
                         }
                     }
                     return scrapedUrls;
@@ -49,8 +49,8 @@ module.exports = function () {
     vo(FMurlGrabber)()
 
     // *Scraper for creating JSON objects from floridaman.com articles*
-    // **Because nightmare is promised based it can't be run in a for loop as is, 
-    //      this is because the promise isn't complete by the time it has to make another promise.
+    // **Because nightmare is promised based it can"t be run in a for loop as is, 
+    //      this is because the promise isn"t complete by the time it has to make another promise.
     //      To get around this and force the for loop to wait on the promise to finish before continuing the for loop we use VO.
     //      VO forces the next Nightmare to hold off (yield) running in the next for loop runthough until we receive the previous promise.
     //      Once the entire for loop has finished the function yields ending Nightmare until the last promise has been received.** 
@@ -102,6 +102,7 @@ module.exports = function () {
                     jsonArr.push(response);
                     console.log(response)
                     example.push(response.headline);
+                    append(JSON.stringify(response))
                 });
         };
         console.log(example);
@@ -110,4 +111,15 @@ module.exports = function () {
     };
 
 
+
+// }
+
+function append(data) {
+    fs.appendFile("data/scraper-data.csv", data, "utf8", function (err) {
+        if (err) {
+          console.log("Some error occured - file either not saved or corrupted file saved.");
+        } else{
+          console.log("It's saved!");
+        }
+      });
 }
