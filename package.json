@@ -20,6 +20,7 @@
   "homepage": "https://github.com/nellie-geek/Project2#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt": "^3.0.6",
     "bcrypt-nodejs": "0.0.3",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
@@ -29,6 +30,7 @@
     "nightmare": "^3.0.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "passport-session": "^1.0.2",
     "sequelize": "^5.5.0",
     "sequelize-cli": "^5.4.0",
     "vo": "^4.0.2"
