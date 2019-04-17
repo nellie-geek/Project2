@@ -2,7 +2,6 @@ $(function () {
 
     $(".fa-heart").on("click", function(event) {
         event.preventDefault();
-
     })
 
     $(".tag-btn").on("click", function () {
@@ -14,4 +13,5 @@ $(function () {
             window.location = "/posts/tag/" + tag
         }
     });
+
 })
