@@ -22,7 +22,6 @@ module.exports = function (app) {
         });
     });
 
-
     //Log out use route
     app.get("/logout", function (req, res) {
         req.logout();
@@ -60,20 +59,9 @@ module.exports = function (app) {
                     postsArr.push(dbPosts[i])
                 }
                 return res.json(postsArr);
-            })
-        })
-
-
-    })
-    // router.get("/api/burgers", function(req, res) {
-    //     burger.selectAll(function(data) {
-    //         var hbsObject = {
-    //           burger: data
-    //         };
-    //         return res.json(hbsObject);
-    //       });
-
-    //   });
+            });
+        });
+    });
 
     app.get("/api/all", function (req, res) {
 
@@ -81,5 +69,5 @@ module.exports = function (app) {
             .then(function (dbPosts) {
                 res.json(dbPosts);
             })
-    })
+    });
 };
