@@ -62,18 +62,7 @@ module.exports = function (app) {
                 return res.json(postsArr);
             })
         })
-
-
     })
-    // router.get("/api/burgers", function(req, res) {
-    //     burger.selectAll(function(data) {
-    //         var hbsObject = {
-    //           burger: data
-    //         };
-    //         return res.json(hbsObject);
-    //       });
-
-    //   });
 
     app.get("/api/all", function (req, res) {
 
