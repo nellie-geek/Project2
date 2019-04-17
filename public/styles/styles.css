@@ -26,7 +26,7 @@ footer {
     text-align: center;
 }
 
-#signup, #login
-{
+#signup, #login {
+    margin-top: 50px;
     background: white;
 }
