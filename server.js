@@ -2,8 +2,7 @@
 var express = require("express");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
-var logger = require("morgan");
-// var routes = require("./routes");
+
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
@@ -16,7 +15,7 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(logger("dev"));
+
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -30,8 +29,6 @@ app.set("view engine", "handlebars");
 require("./routes/api/html-routes.js")(app);
 require("./routes/api/api-routes.js")(app);
 var routes = require("./controllers/fms-controller.js");
-
-// app.use(routes);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {

@@ -9,7 +9,6 @@ body {
 
 .welcome {
     background-color: bisque;
-
 }
 
 .btn{
@@ -27,7 +26,6 @@ footer {
     text-align: center;
 }
 
-#signup, #login
-{
+#signup, #login {
     background: white;
 }
