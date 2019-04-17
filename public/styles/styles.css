@@ -28,5 +28,6 @@ footer {
 }
 
 #signup, #login {
+    margin-top: 50px;
     background: white;
 }
