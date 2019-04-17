@@ -50,7 +50,6 @@ module.exports = function (app) {
             res.render("posts", {
                 posts: posts
             });
-        });
     });
 
 

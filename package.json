@@ -28,6 +28,7 @@
     "express-session": "^1.16.1",
     "mysql2": "^1.6.5",
     "nightmare": "^3.0.1",
+    "nodemon": "^1.18.11",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-session": "^1.0.2",

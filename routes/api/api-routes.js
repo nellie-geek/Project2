@@ -62,7 +62,10 @@ module.exports = function (app) {
                 return res.json(postsArr);
             })
         })
-    })
+
+
+    });
+
 
     app.get("/api/all", function (req, res) {
 
