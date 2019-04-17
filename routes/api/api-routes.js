@@ -22,7 +22,6 @@ module.exports = function (app) {
         });
     });
 
-
     //Log out use route
     app.get("/logout", function (req, res) {
         req.logout();
@@ -60,16 +59,15 @@ module.exports = function (app) {
                     postsArr.push(dbPosts[i])
                 }
                 return res.json(postsArr);
-            })
-        })
+            });
+        });
     });
 
-
-    app.get("/api/all", function (req, res) {
+   app.get("/api/all", function (req, res) {
 
         db.Florida_man.findAll({})
             .then(function (dbPosts) {
                 res.json(dbPosts);
             })
-    })
+    });
 };

@@ -17,15 +17,15 @@ module.exports = function (app) {
 
     app.get("/posts", function (req, res) {
 
-            res.render("posts");
+        res.render("posts");
     });
 
     app.get("/posts/tag/:tag", function (req, res) {
+
         var postsArr = [];
         db.Florida_man.findAll({
             where: {
-                meta_tag1: req.params.tag
-
+                meta_tag1: req.body
             }
         }).then(function (posts) {
             for (var i = 0; i < posts.length; i++) {
@@ -44,7 +44,6 @@ module.exports = function (app) {
                 res.render("posts", {
                     posts: postsArr
                 });
-
             });
     });
 
@@ -55,6 +54,4 @@ module.exports = function (app) {
 
             });
     });
-
-
 };
