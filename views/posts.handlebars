@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/posts/all">Florida Man!</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -8,6 +7,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
       <li class="nav-item active">
         <a class="nav-link" target="_blank" href="https://en.wikipedia.org/wiki/Florida_Man">Who is Florida Man? <span
             class="sr-only">(current)</span></a>
@@ -36,6 +36,9 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" target="_blank" href="https://www.reddit.com/r/polishman/">Polishman!</a>
         </div>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a>
+      </li>
       </li>
     </ul>
     {{!-- Maybe for the future
@@ -55,23 +58,26 @@
     </div>
 
     {{!-- heading --}}
-    <div class="col-sm-8 text-left" >
+    <div class="col-sm-8 text-left">
       <div class="card">
-        <div class="card-header" id="welcome"> <h1>Welcome</h1>
-        <p>Florida Man is the worlds worst super hero! Click a button to see a collection of Florida man stories!</p>
+        <div class="card-header" id="welcome">
+          <h1>Welcome</h1>
+          <p>Florida Man is the worlds worst super hero! Click a button to see a collection of Florida man stories!</p>
         </div>
-     
+
         <div class="card-body" id="button-pool">
-      {{!-- buttons --}}
+          {{!-- buttons --}}
           <button type="button" href="/posts/ALL" id="ALL" class="btn btn-primary tag-btn">All</button>
           <button type="button" href="/posts/tag/ANIMALS" id="ANIMALS" class="btn btn-success tag-btn">ANIMALS</button>
           <button type="button" href="/posts/tag/CREEPS" id="CREEPS" class="btn btn-danger tag-btn">CREEPS</button>
           <button type="button" href="/posts/tag/DRUGS" id="DRUGS" class="btn btn-warning tag-btn">DRUGS</button>
           <button type="button" href="/posts/tag/DRUNKS" id="DRUNKS" class="btn btn-info tag-btn">DRUNKS</button>
-          <button type="button" href="/posts/tag/DUMB-CRIMINALS" id="DUMB-CRIMINALS" class="btn btn-dark tag-btn">DUMB CRIMINALS</button>
+          <button type="button" href="/posts/tag/DUMB-CRIMINALS" id="DUMB-CRIMINALS" class="btn btn-dark tag-btn">DUMB
+            CRIMINALS</button>
           <button type="button" href="/posts/tag/FAIL" id="FAIL" class="btn btn-primary tag-btn">FAIL</button>
           <button type="button" href="/posts/tag/FIGHTS" id="FIGHTS" class="btn btn-success tag-btn">FIGHTS</button>
-          <button type="button" href="/posts/tag/FLORIDA-WOMAN" id="FLORIDA-WOMAN" class="btn btn-danger tag-btn">FLORIDA WOMAN</button>
+          <button type="button" href="/posts/tag/FLORIDA-WOMAN" id="FLORIDA-WOMAN"
+            class="btn btn-danger tag-btn">FLORIDA WOMAN</button>
           <button type="button" href="/posts/tag/FOOD" id="FOOD" class="btn btn-warning tag-btn">FOOD</button>
           <button type="button" href="/posts/tag/FUNNY" id="FUNNY" class="btn btn-info tag-btn">FUNNY</button>
           <button type="button" href="/posts/tag/GUNS" id="GUNS" class="btn btn-dark tag-btn">GUNS</button>
@@ -80,11 +86,12 @@
           <button type="button" href="/posts/tag/NSFW" id="NSFW" class="btn btn-danger tag-btn">NSFW</button>
           <button type="button" href="/posts/tag/PENIS" id="PENIS" class="btn btn-warning tag-btn">PENIS</button>
           <button type="button" href="/posts/tag/VEHICLES" id="VEHICLES" class="btn btn-info tag-btn">VEHICLES</button>
-          <button type="button" href="/posts/tag/WEIRD-WEAPONS" id="WEIRD-WEAPONS" class="btn btn-dark tag-btn">WEIRD WEAPONS</button>
+          <button type="button" href="/posts/tag/WEIRD-WEAPONS" id="WEIRD-WEAPONS" class="btn btn-dark tag-btn">WEIRD
+            WEAPONS</button>
           <button type="button" href="/posts/tag/WTF" id="WTF" class="btn btn-primary tag-btn">WTF</button>
-          </div>
         </div>
-        <br> <br>
+      </div>
+      <br> <br>
 
       {{!-- articles --}}
       <div class="card">
