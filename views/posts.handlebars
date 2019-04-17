@@ -30,7 +30,7 @@
       <hr>
 
       {{!-- buttons --}}
-      <button type="button" id="All" class="btn btn-primary btn-lg">All</button>
+      <button type="button" id="ALL" class="btn btn-primary btn-lg tag-btn">All</button>
       <button type="button" id="ANIMALS" class="btn btn-secondary tag-btn">ANIMALS</button>
       <button type="button" id="CREEPS" class="btn btn-success tag-btn">CREEPS</button>
       <button type="button" id="DRUGS" class="btn btn-danger tag-btn">DRUGS</button>
@@ -48,7 +48,7 @@
       <button type="button" id="PENIS" class="btn btn-warning tag-btn">PENIS</button>
       <button type="button" id="VEHICLES" class="btn btn-info tag-btn">VEHICLES</button>
       <button type="button" id="WEIRD-WEAPONS" class="btn btn-light tag-btn">WEIRD WEAPONS</button>
-      <button type="button" id="WTF" class="btn btn-dark">WTF</button>
+      <button type="button" id="WTF" class="btn btn-dark tag-btn">WTF</button>
 
       <hr>
 
@@ -59,13 +59,12 @@
         </div>
         <div class="card-body" id="article-card">
           {{#each posts}}
-          <li class="list-group-item">
+          <li class="list-group-item all {{this.meta_tag1}} {{this.meta_tag2}}">
             <h3>{{this.headline}}</h3>
             <img src={{this.image_url}} alt="">
             <p>{{this.pub_date}}</p>
             <p>{{this.body}}</p>
-
-
+            <p><strong>{{this.meta_tag1}}, {{this.meta_tag2}}</strong> <a id="{{this.id}}" href="#"><i class="far fa-heart"></i></a></p>
 
             <a href={{this.url}}>Original Article</a>
           </li>
@@ -86,7 +85,8 @@
 <footer class="container-fluid text-center">
   <h5>Made with lots and lots of<i class="fa fa-flask"></i></h5>
 </footer>
-<script src="/js/posts.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/posts.js"></script>
 
 {{!-- search field --}}
 {{!-- <div class="row">
