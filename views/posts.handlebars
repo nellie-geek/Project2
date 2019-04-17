@@ -1,0 +1,110 @@
+{{!--  --}}
+{{!-- <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      </button>
+      <a class="navbar-brand"><i class="fas fa-pepper-hot"></i></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Florida Man!</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> --}}
+
+<div class="container-fluid text-center">
+  <div class="row content">
+
+    {{!-- left side --}}
+    <div class="col-sm-2 sidenav">
+      <img src="" alt="">
+    </div>
+
+    {{!-- heading --}}
+    <div class="col-sm-8 text-left">
+      <h1>Welcome</h1>
+      <p>Florida Man is the worlds worst super hero! Click a button to see a collection of Florida man stories!</p>
+
+      <hr>
+
+      {{!-- buttons --}}
+      <button type="button" id="ALL" class="btn btn-primary btn-lg tag-btn">All</button>
+      <button type="button" id="ANIMALS" class="btn btn-secondary tag-btn">ANIMALS</button>
+      <button type="button" id="CREEPS" class="btn btn-success tag-btn">CREEPS</button>
+      <button type="button" id="DRUGS" class="btn btn-danger tag-btn">DRUGS</button>
+      <button type="button" id="DRUNKS" class="btn btn-warning tag-btn">DRUNKS</button>
+      <button type="button" id="DUMB-CRIMINALS" class="btn btn-info tag-btn">DUMB CRIMINALS</button>
+      <button type="button" id="FAIL" class="btn btn-light tag-btn">FAIL</button>
+      <button type="button" id="FIGHTS" class="btn btn-dark tag-btn">FIGHTS</button>
+      <button type="button" id="FLORIDA-WOMAN" class="btn btn-secondary tag-btn">FLORIDA WOMAN</button>
+      <button type="button" id="FOOD" class="btn btn-success tag-btn">FOOD</button>
+      <button type="button" id="FUNNY" class="btn btn-danger tag-btn">FUNNY</button>
+      <button type="button" id="GUNS" class="btn btn-warning tag-btn">GUNS</button>
+      <button type="button" id="JERKS" class="btn btn-info tag-btn">JERKS</button>
+      <button type="button" id="METH" class="btn btn-light tag-btn">METH</button>
+      <button type="button" id="NSFW" class="btn btn-dark tag-btn">NSFW</button>
+      <button type="button" id="PENIS" class="btn btn-warning tag-btn">PENIS</button>
+      <button type="button" id="VEHICLES" class="btn btn-info tag-btn">VEHICLES</button>
+      <button type="button" id="WEIRD-WEAPONS" class="btn btn-light tag-btn">WEIRD WEAPONS</button>
+      <button type="button" id="WTF" class="btn btn-dark tag-btn">WTF</button>
+
+      <hr>
+
+      {{!-- articles --}}
+      <div class="card">
+        <div class="card-header">
+          <strong>Best Florida Man</strong>
+        </div>
+        <div class="card-body" id="article-card">
+          {{#each posts}}
+          <li class="list-group-item all {{this.meta_tag1}} {{this.meta_tag2}}">
+            <h3>{{this.headline}}</h3>
+            <img src={{this.image_url}} alt="">
+            <p>{{this.pub_date}}</p>
+            <p>{{this.body}}</p>
+            <p><strong>{{this.meta_tag1}}, {{this.meta_tag2}}</strong> <a id="{{this.id}}" href="#"><i class="far fa-heart"></i></a></p>
+
+            <a href={{this.url}}>Original Article</a>
+          </li>
+          {{/each}}
+
+        </div>
+      </div>
+    </div>
+
+    {{!-- left side --}}
+    <div class="col-sm-2 sidenav">
+      <img src="" alt="">
+    </div>
+  </div>
+</div>
+
+{{!-- footer --}}
+<footer class="container-fluid text-center">
+  <h5>Made with lots and lots of<i class="fa fa-flask"></i></h5>
+</footer>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/posts.js"></script>
+
+{{!-- search field --}}
+{{!-- <div class="row">
+    <div class="col-12">
+      <br>
+      <div class="card mt-4">
+        <div class="card-header">
+          <strong>Search For Florida Man Articles!</strong>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="search">Search Keyword:</label>
+            <input type="text" class="form-control" id="search-word">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-danger" id="search"> Search</button> --}}
+{{!-- <button class="btn btn-default" id="clear-all">
+                <i class="fa fa-trash"></i> Clear Results</button> --}}
+{{!-- </div>
+    </div>
+  </div> --}}

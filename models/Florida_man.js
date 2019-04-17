@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        pub_date: DataTypes.DATE,
+        pub_date: DataTypes.STRING,
         image_url: DataTypes.STRING,
         body: {
             type: DataTypes.TEXT,
@@ -18,7 +18,8 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         url: DataTypes.STRING,
-        // meta_tags: DataTypes.ARRAY(DataTypes.STRING),
+        meta_tag1: DataTypes.STRING,
+        meta_tag2: DataTypes.STRING,
         upvote: DataTypes.INTEGER,
         downvote: DataTypes.INTEGER
     });

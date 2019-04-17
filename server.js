@@ -27,6 +27,9 @@ app.set("view engine", "handlebars");
 // Requiring our routes
 require("./routes/api/html-routes.js")(app);
 require("./routes/api/api-routes.js")(app);
+var routes = require("./controllers/fms-controller.js");
+
+// app.use(routes);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
