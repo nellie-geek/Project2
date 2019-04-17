@@ -9,6 +9,7 @@ body {
 
 .navbar {
     background-color: grey;
+
 }
 
 .btn{
@@ -26,7 +27,6 @@ footer {
     text-align: center;
 }
 
-#signup, #login
-{
+#signup, #login {
     background: white;
 }
