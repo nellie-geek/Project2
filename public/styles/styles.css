@@ -7,9 +7,8 @@ body {
     position: relative;
 }
 
-.welcome {
-    background-color: bisque;
-
+.navbar {
+    background-color: grey;
 }
 
 .btn{
