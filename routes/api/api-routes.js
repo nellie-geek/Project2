@@ -48,7 +48,7 @@ module.exports = function (app) {
             }
         }).then(function (dbPosts) {
             for (var i = 0; i < dbPosts.length; i++) {
-                postsArr.push(dbPosts[i])
+                postsArr.push(dbPosts[i]);
             }
             db.Florida_man.findAll({
                 where: {
@@ -56,7 +56,7 @@ module.exports = function (app) {
                 }
             }).then(function (dbPosts) {
                 for (var i = 0; i < dbPosts.length; i++) {
-                    postsArr.push(dbPosts[i])
+                    postsArr.push(dbPosts[i]);
                 }
                 return res.json(postsArr);
             });
