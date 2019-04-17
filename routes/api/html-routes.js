@@ -32,6 +32,7 @@ module.exports = function (app) {
             });
 
             db.Florida_man.findAll({
+
                 where: {
                     meta_tag2: req.params.tag
                 }
@@ -43,8 +44,7 @@ module.exports = function (app) {
                     posts: postsArr
                 });
             });
-        });
-
+        })
         app.get("/posts/all", function (req, res) {
                 db.Florida_man.findAll({}).then(function (posts) {
                     res.render("posts", {
@@ -55,3 +55,5 @@ module.exports = function (app) {
 
             });
         };
+
+
