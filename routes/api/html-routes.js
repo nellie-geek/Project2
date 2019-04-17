@@ -8,13 +8,10 @@ var isAuthenticated = require("../../config/middleware/isAuthenticated");
 module.exports = function (app) {
 
     app.get("/", function (req, res) {
-
         res.sendFile(path.join(__dirname, "../../public/signup.html"));
-
     });
 
     app.get("/login", function (req, res) {
-
         res.sendFile(path.join(__dirname, "../../public/login.html"));
     });
 
@@ -50,13 +47,11 @@ module.exports = function (app) {
             });
     });
 
-    app.get("/posts", function (req, res) {
-
+    app.get("/posts/all", function (req, res) {
         db.Florida_man.findAll({}).then(function (posts) {
             res.render("posts", {
                 posts: posts
-            });
-        });
-    });
 
+            });
+    });
 };

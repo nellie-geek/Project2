@@ -1,18 +1,19 @@
-{{!--  --}}
-{{!-- <nav class="navbar navbar-inverse">
+
+ {{!-- --}}
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-      </button>
-      <a class="navbar-brand"><i class="fas fa-pepper-hot"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">Logout</button>
+      <a class="navbar-brand">Florida Man! <i class="fas fa-pepper-hot"></i></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Florida Man!</a></li>
+        <li class="active"><a href="#"></a></li>
       </ul>
     </div>
   </div>
-</nav> --}}
+</nav>
+
 
 <div class="container-fluid text-center">
   <div class="row content">
@@ -23,34 +24,41 @@
     </div>
 
     {{!-- heading --}}
-    <div class="col-sm-8 text-left">
-      <h1>Welcome</h1>
-      <p>Florida Man is the worlds worst super hero! Click a button to see a collection of Florida man stories!</p>
+    <div class="col-sm-8 text-left" >
+      <div class="card">
+        <div class="card-header" id="welcome"> <h1>Welcome</h1>
+        <p>Florida Man is the worlds worst super hero! Click a button to see a collection of Florida man stories!</p>
+        </div>
+     
+        <div class="card-body" id="button-pool">
+      {{!-- buttons --}}\
+      
 
       <hr>
 
-      {{!-- buttons --}}
-      <button type="button" id="ALL" class="btn btn-primary btn-lg tag-btn">All</button>
-      <button type="button" id="ANIMALS" class="btn btn-secondary tag-btn">ANIMALS</button>
-      <button type="button" id="CREEPS" class="btn btn-success tag-btn">CREEPS</button>
-      <button type="button" id="DRUGS" class="btn btn-danger tag-btn">DRUGS</button>
-      <button type="button" id="DRUNKS" class="btn btn-warning tag-btn">DRUNKS</button>
-      <button type="button" id="DUMB-CRIMINALS" class="btn btn-info tag-btn">DUMB CRIMINALS</button>
-      <button type="button" id="FAIL" class="btn btn-light tag-btn">FAIL</button>
-      <button type="button" id="FIGHTS" class="btn btn-dark tag-btn">FIGHTS</button>
-      <button type="button" id="FLORIDA-WOMAN" class="btn btn-secondary tag-btn">FLORIDA WOMAN</button>
-      <button type="button" id="FOOD" class="btn btn-success tag-btn">FOOD</button>
-      <button type="button" id="FUNNY" class="btn btn-danger tag-btn">FUNNY</button>
-      <button type="button" id="GUNS" class="btn btn-warning tag-btn">GUNS</button>
-      <button type="button" id="JERKS" class="btn btn-info tag-btn">JERKS</button>
-      <button type="button" id="METH" class="btn btn-light tag-btn">METH</button>
-      <button type="button" id="NSFW" class="btn btn-dark tag-btn">NSFW</button>
-      <button type="button" id="PENIS" class="btn btn-warning tag-btn">PENIS</button>
-      <button type="button" id="VEHICLES" class="btn btn-info tag-btn">VEHICLES</button>
-      <button type="button" id="WEIRD-WEAPONS" class="btn btn-light tag-btn">WEIRD WEAPONS</button>
-      <button type="button" id="WTF" class="btn btn-dark tag-btn">WTF</button>
+          <button type="button" href="/posts/ALL" id="ALL" class="btn btn-primary tag-btn">All</button>
+          <button type="button" href="/posts/tag/ANIMALS/" id="ANIMALS" class="btn btn-success tag-btn">ANIMALS</button>
+          <button type="button" href="/posts/tag/CREEPS/"id="CREEPS" class="btn btn-danger tag-btn">CREEPS</button>
+          <button type="button" href="/posts/tag/DRUGS/" id="DRUGS" class="btn btn-warning tag-btn">DRUGS</button>
+          <button type="button" href="/posts/tag/DRUNKS/"  id="DRUNKS" class="btn btn-info tag-btn">DRUNKS</button>
+          <button type="button" href="/posts/tag/DUMB-CRIMINALS/" id="DUMB-CRIMINALS" class="btn btn-dark tag-btn">DUMB CRIMINALS</button>
+          <button type="button" href="/posts/tag/FAIL/" id="FAIL" class="btn btn-primary tag-btn">FAIL</button>
+          <button type="button" href="/posts/tag/FIGHTS/" id="FIGHTS" class="btn btn-success tag-btn">FIGHTS</button>
+          <button type="button" href="/posts/tag/FLORIDA-WOMAN/" id="FLORIDA-WOMAN" class="btn btn-danger tag-btn">FLORIDA WOMAN</button>
+          <button type="button" href="/posts/tag/FOOD/" id="FOOD" class="btn btn-warning tag-btn">FOOD</button>
+          <button type="button" href="/posts/tag/FUNNY/" id="FUNNY" class="btn btn-info tag-btn">FUNNY</button>
+          <button type="button" href="/posts/tag/GUNS/" id="GUNS" class="btn btn-dark tag-btn">GUNS</button>
+          <button type="button" href="/posts/tag/JERKS/" id="JERKS" class="btn btn-primary tag-btn">JERKS</button>
+          <button type="button" href="/posts/tag/METH" id="METH" class="btn btn-success tag-btn">METH</button>
+          <button type="button" href="/posts/tag/NSFW" id="NSFW" class="btn btn-danger tag-btn">NSFW</button>
+          <button type="button" href="/posts/tagPENIS" id="PENIS" class="btn btn-warning tag-btn">PENIS</button>
+          <button type="button" href="/posts/tag/VEHICLES" id="VEHICLES" class="btn btn-info tag-btn">VEHICLES</button>
+          <button type="button" href="/posts/tag/VEHICLES" id="WEIRD-WEAPONS" class="btn btn-dark tag-btn">WEIRD WEAPONS</button>
+          <button type="button" href="/posts/tag/WTF"  id="WTF" class="btn btn-primary tag-btn">WTF</button>
+          </div>
+        </div>
+        <br> <br>
 
-      <hr>
 
       {{!-- articles --}}
       <div class="card">
@@ -85,6 +93,7 @@
 <footer class="container-fluid text-center">
   <h5>Made with lots and lots of<i class="fa fa-flask"></i></h5>
 </footer>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/posts.js"></script>
 
