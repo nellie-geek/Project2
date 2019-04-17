@@ -16,43 +16,40 @@ module.exports = function (app) {
     });
 
     app.get("/posts", function (req, res) {
-
         res.render("posts");
     });
 
     app.get("/posts/tag/:tag", function (req, res) {
-
         var postsArr = [];
         db.Florida_man.findAll({
             where: {
-                meta_tag1: req.body
+                meta_tag1: req.params.tag
             }
         }).then(function (posts) {
             for (var i = 0; i < posts.length; i++) {
-                postsArr.push(posts[i])              
+                postsArr.push(posts[i]);
             }
-        });         
-        
-        db.Florida_man.findAll({
-                where: {
-                    meta_tag2: req.params.tag
-                }
-            }).then(function (posts) {
-                for (var i = 0; i < posts.length; i++) {
-                    postsArr.push(posts[i])              
-                }
-                res.render("posts", {
-                    posts: postsArr
-                });
-            });
-    });
+        });
 
+        db.Florida_man.findAll({
+
+            where: {
+                meta_tag2: req.params.tag
+            }
+        }).then(function (posts) {
+            for (var i = 0; i < posts.length; i++) {
+                postsArr.push(posts[i])
+            }
+            res.render("posts", {
+                posts: postsArr
+            });
+        });
+    })
     app.get("/posts/all", function (req, res) {
         db.Florida_man.findAll({}).then(function (posts) {
             res.render("posts", {
                 posts: posts
-
             });
-    })
-});
+        });
+    });
 };
