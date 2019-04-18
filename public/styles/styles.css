@@ -1,6 +1,6 @@
 body {
     background-image: url("welcome-to-florida-1.jpg");
-    height: 800px;
+    height: 700px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    padding-top: 18%;
+    padding-top: 120px;
 }
 
 .btn{
